@@ -28,4 +28,6 @@ map.on('move', function () {
 		//setLeafLatLong(lat, lng);
 	});
 
+
+
 marker.addTo(map);
