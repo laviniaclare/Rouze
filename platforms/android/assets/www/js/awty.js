@@ -10,8 +10,8 @@ var marker = L.marker(new L.LatLng(37.772, -122.445), {
 });
 
 function ondragend() {
-    var m_lat_lon = marker.getLatLng();
-    
+	var m_lat_lon = marker.getLatLng();
+	
 }
 
 map.on('move', function () {
@@ -25,9 +25,42 @@ map.on('move', function () {
 		lat = Number(position['lat']).toFixed(5);
 		lng = Number(position['lng']).toFixed(5);
 		console.log(position);
-		//setLeafLatLong(lat, lng);
+
 	});
 
+function main(){
+	console.log("watching position");
+	if(navigator.geolocation)
+		{
+		console.log("should show a position but who knows!");
+		navigator.geolocation.watchPosition(showPosition);
+		console.log(showPosition);
+		}
+	else
+		{
+		console.log("Whelp.  meh");
+		alert("Geolocation is not supported by this browser.");
+		}
+	}
 
+function showPosition(pos){
+alert("Latitude: "+pos.coords.latitude+"nLongitude: "+pos.coords.longitude);
+}
+
+$(main);
+// navigator.geolocation.getCurrentPosition(function(pos) {
+// 	console.log(pos);
+// 	console.log(pos.latitude);
+// 	// calculate the distance
+// 	// haversine formula
+// 	// if pos.latitude,pos.longitude radius < 10
+// 	// do stuff
+// 	// make a sound and buzz
+// 	// html5 audio API 
+// 	// webkit notifications API
+// 	if (phonegap) {
+// 		// also throw up a notification
+// 	} 
+// });
 
 marker.addTo(map);
