@@ -44,12 +44,13 @@ function main(){
 	}
 
 function showPosition(pos){
-	var marker2 = L.marker(new L.LatLng(pos.coords.latitude,pos.coords.longitude), {
+	var marker2 = L.marker(new L.LatLng(pos.coords.latitude, pos.coords.longitude), {
 		icon: L.mapbox.marker.icon({
 		'marker-color': 'ff8888'
 		}),
 	});
-console.log("Latitude: "+pos.coords.latitude+"nLongitude: "+pos.coords.longitude);
+	map.locate();
+	console.log("Latitude: "+pos.coords.latitude+"nLongitude: "+pos.coords.longitude);
 }
 
 $(main);
