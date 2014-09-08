@@ -28,6 +28,10 @@ map.on('move', function () {
 
 	});
 
+function setTargetLocation(){
+	console.log("I've been clicked!");
+	}
+
 function main(){
 	console.log("watching position");
 	if(navigator.geolocation)
@@ -53,20 +57,23 @@ function showPosition(pos){
 	console.log("Latitude: "+pos.coords.latitude+"nLongitude: "+pos.coords.longitude);
 }
 
+
+$(':button').on('click',setTargetLocation);
+
 $(main);
 // navigator.geolocation.getCurrentPosition(function(pos) {
-// 	console.log(pos);
-// 	console.log(pos.latitude);
-// 	// calculate the distance
-// 	// haversine formula
-// 	// if pos.latitude,pos.longitude radius < 10
-// 	// do stuff
-// 	// make a sound and buzz
-// 	// html5 audio API 
-// 	// webkit notifications API
-// 	if (phonegap) {
-// 		// also throw up a notification
-// 	} 
-// });
+// console.log(pos);
+// console.log(pos.latitude);
+// // calculate the distance
+// // haversine formula
+// // if pos.latitude,pos.longitude radius < 10
+// // do stuff
+// // make a sound and buzz
+// // html5 audio API 
+// // webkit notifications API
+// if (phonegap) {
+//		// also throw up a notification
+//} 
+//});
 
 marker.addTo(map);
