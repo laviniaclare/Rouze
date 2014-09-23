@@ -4,6 +4,8 @@ Have you ever been on a bus and missed your stop because you fell asleep, were t
 
 This is a work in progress, but will be deployed when it is completed.
 
+The files which are unique to this project and not part of PhoneGap can be found in Rouze/platforms/android/assets/www/ in the "css" and "js" folders.  They are the files titled "awty.css" and "awty.js".
+
 ####Technologies used so far:
 - Mapbox API
 - Mapbox.js
